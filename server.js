@@ -4,7 +4,8 @@ const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server, {
-	cors: {
+    cors: {
+        origin: "http://192.168.43.189:4000"
 		origin: 'https://videochat-webrtc.netlify.app/',
 		methods: ["GET", "POST"]
 	}
