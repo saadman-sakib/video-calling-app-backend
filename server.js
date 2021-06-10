@@ -3,9 +3,9 @@ const http = require("http");
 const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io");
+const PORT = process.env.PORT || 8000;
 const io = socket(server, {
     cors: {
-		origin: ['https://videochat-webrtc.netlify.app/'],
 		methods: ["GET", "POST"]
 	}
 });
@@ -52,4 +52,4 @@ io.on("connection", socket => {
 });
 
 
-server.listen(8000, () => console.log('server is running on port 8000\n'));
+server.listen(PORT, () => console.log(`server is running on ${PORT}\n`));
