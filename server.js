@@ -29,6 +29,7 @@ io.on("connection", socket => {
             socket.emit("other user", otherUser);
             socket.to(otherUser).emit("user joined", socket.id);
             console.log("socket id sent to each other\n");
+            rooms = {};
         }
     });
 
