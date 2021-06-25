@@ -10,7 +10,7 @@ const io = socket(server, {
 	}
 });
 
-const rooms = {};
+var rooms = {};
 
 io.on("connection", socket => {
     // joining in a specific room id (if there is no room, then a room will be created)
